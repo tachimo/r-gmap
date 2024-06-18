@@ -1,7 +1,14 @@
 <h2>r-gmap(住所検索アプリ)</h2>
 
 <input id="address" type="textbox" value="GeekSalon">
-<input type="button" value="Encode" onClick="codeAddress()">
+<input type="button" value="検索" onclick="codeAddress()">
+
+<div id="text">
+  <% @posts.each do |post| %>
+   <p> <%= post.id %> </p>
+   <p> <%= post.text %> </p>
+  <% end %>
+</div>
 
 <%= link_to '地図の登録',  new_post_path %>
 
