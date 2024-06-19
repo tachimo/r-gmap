@@ -1,3 +1,8 @@
+<h2>r-gmap(住所検索アプリ)</h2>
+
+<input id="address" type="textbox" value="GeekSalon">
+<input type="button" value="検索" onclick="codeAddress()">
+
 <%= form_with model: @post, url:posts_path, local: true do |f| %>
   <div class="action">
     <%= f.label :text,"内容" %>
@@ -10,10 +15,7 @@
   </div>
 <% end  %>
 
-<h2>r-gmap(住所検索アプリ)</h2>
 
-<input id="address" type="textbox" value="GeekSalon">
-<input type="button" value="検索" onclick="codeAddress()">
 <p>マーカーをドラック＆ドロップで位置の調整ができます。<p>
 <div id='map'></div>
 
