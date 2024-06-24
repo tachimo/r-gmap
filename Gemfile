@@ -68,3 +68,5 @@ end
 
 gem 'geocoder'
 gem 'dotenv-rails'
+
+gem "tailwindcss-rails", "~> 2.6"
