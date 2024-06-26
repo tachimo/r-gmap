@@ -1,4 +1,6 @@
-<h2>f-gmap(釣場検索アプリ)</h2>
+<div class="flex justify-between items-center">
+  <h2 class="font-bold text-4xl">f-gmap(釣場検索アプリ)</h2>
+</div>
 
 <input id="address" type="textbox" value="所在地">
 <input type="button" value="検索" onclick="codeAddress()">
@@ -10,7 +12,7 @@
   <% end %>
 </div>
 
-<%= link_to '地図の登録',  new_post_path %>
+<%= link_to '地図の登録',  new_post_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium"%>
 
 <div id="map"></div>
 
