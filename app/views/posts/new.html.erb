@@ -1,7 +1,7 @@
 <h2>f-gmap(釣場検索アプリ)</h2>
 
 <input id="address" type="textbox" value="所在地">
-<input type="button" value="検索" onclick="codeAddress()">
+<%= button_to "検索", root_path, onclick="codeAddress()" %>
 
 <%= form_with model: @post, url:posts_path, local: true do |f| %>
   <div class="action">
