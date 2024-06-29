@@ -1,7 +1,7 @@
 <h2>f-gmap(釣場検索アプリ)</h2>
 
 <input id="address" type="textbox" value="所在地">
-<%= button_to "検索", root_path, onclick="codeAddress()" %>
+<button onclick="codeAddress()">検索</button>
 
 <%= form_with model: @post, url:posts_path, local: true do |f| %>
   <div class="action">
@@ -80,4 +80,4 @@ function codeAddress(){
 }
 
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_KEY'] %>&callback=initMap" async defer></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_KEY'] %>&callback=initMap" async defer></script>
