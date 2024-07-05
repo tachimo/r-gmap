@@ -2,11 +2,17 @@
   <h2 class="font-bold text-4xl">f-gmap(釣場検索アプリ)</h2>
 </div>
 
-<%= link_to '新規登録', new_user_registration_path, class: "text-purple-500 hover:text-white hover:bg-purple-500 border border-purple-500 text-xs font-semibold rounded-full px-4 py-1 leading-normal" %>
+<%# if logged_in? %>
 
-<%= link_to 'ログイン', new_user_session_path, class: "text-purple-500 hover:text-white hover:bg-purple-500 border border-purple-500 text-xs font-semibold rounded-full px-4 py-1 leading-normal" %>
+  <%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete }, class: "text-purple-500 hover:text-white hover:bg-purple-500 border border-purple-500 text-xs font-semibold rounded-full px-4 py-1 leading-normal" %>
 
-<%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete }, class: "text-purple-500 hover:text-white hover:bg-purple-500 border border-purple-500 text-xs font-semibold rounded-full px-4 py-1 leading-normal" %>
+<%# else %>
+
+  <%= link_to '新規登録', new_user_registration_path, class: "text-purple-500 hover:text-white hover:bg-purple-500 border border-purple-500 text-xs font-semibold rounded-full px-4 py-1 leading-normal" %>
+
+  <%= link_to 'ログイン', new_user_session_path, class: "text-purple-500 hover:text-white hover:bg-purple-500 border border-purple-500 text-xs font-semibold rounded-full px-4 py-1 leading-normal" %>
+
+<%# end %>
 
 <div id="text">
   <% @posts.each do |post| %>

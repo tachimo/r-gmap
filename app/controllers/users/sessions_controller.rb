@@ -4,19 +4,26 @@ class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
-  # def new
+  def new
   #   super
-  # end
+  end
 
   # POST /resource/sign_in
-  # def create
-  #   super
-  # end
+  def create
+     @user = login(params[:email], params[:password])
+    if @user
+      redirect_back_or_to(user_path(@user), notice: 'ログインに成功しました')
+    else
+      flash[:notice] = 'ログインに失敗しました。'
+      render :new
+    end
+  end
 
   # DELETE /resource/sign_out
-  # def destroy
-  #   super
-  # end
+  def destroy
+    logout
+    redirect_to(root_path, notice: 'ログアウトしました。')
+  end
 
   # protected
 
