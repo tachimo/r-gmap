@@ -1,5 +1,3 @@
-<script>
-
     function initMap() {
 
       //初期表示位置
@@ -44,6 +42,5 @@
       //複数マーカー ここまで
   }
 
-</script>
 <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_KEY'] %>&callback=initMap" async defer></script>
 
